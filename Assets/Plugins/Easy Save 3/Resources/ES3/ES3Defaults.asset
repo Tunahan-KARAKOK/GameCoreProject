@@ -31,11 +31,22 @@ MonoBehaviour:
     assemblyNames:
     - Assembly-CSharp-firstpass
     - Cinemachine
+    - MoreMountains.NiceVibrations.Demos
     - Assembly-CSharp
     - CW.Common
+    - MK.Toon.Editor
+    - MoreMountains.NiceVibrations.Editor
     - PPv2URPConverters
+    - MK.RampCreator
     - LeanCommon
+    - MoreMountains.NiceVibrations
+    - MoreMountains.NiceVibrations.Haptics
     - LeanTouch
+    - MK.Toon
+    - MK.MKTextureChannelPacker
+    - MK.Toon.URP
+    - MK.Toon.URP.Editor
+    - MK.MeshUtility
     showAdvancedSettings: 0
   addMgrToSceneAutomatically: 0
   autoUpdateReferences: 1
