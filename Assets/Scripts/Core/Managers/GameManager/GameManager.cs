@@ -10,19 +10,23 @@ public class GameManager : Singleton<GameManager>
     
     private void Awake()
     {
-        _gameStateController = GetComponent<IGameStateController>();
+        _gameStateController = GetComponent<GameStateController>();
+        
     }
 
-    private void Update()
+    private void OnEnable()
     {
-        if (Input.GetKeyDown(KeyCode.A))
-        {
-            ChangeGameState(GameStates.InGameState);
-        }
+        EventManager.Instance.EventController.GetEvent<GameStateEvent>().Data.AddListener(ChangeGameState);
+    }
+
+    private void OnDisable()
+    {
+        EventManager.Instance.EventController.GetEvent<GameStateEvent>().Data.RemoveListener(ChangeGameState);
     }
 
     public void ChangeGameState(GameStates state)
     {
         _gameStateController.SetNewGameState(state);
+        EventManager.Instance.EventController.GetEvent<GameStateEvent>().Data.Execute(state);
     }
 }
