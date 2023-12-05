@@ -11,7 +11,6 @@ public class GameManager : Singleton<GameManager>
     private void Awake()
     {
         _gameStateController = GetComponent<GameStateController>();
-        
     }
 
     private void OnEnable()

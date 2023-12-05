@@ -6,11 +6,11 @@ using UnityEngine;
 [RequireComponent(typeof(UiController))]
 public class UiManager : Singleton<UiManager>
 {
-    private UiController _uiController;
+    public UiController UiController { get; private set; }
 
     private void Awake()
     {
-        _uiController = GetComponent<UiController>();
+        UiController = GetComponent<UiController>();
     }
 }
 

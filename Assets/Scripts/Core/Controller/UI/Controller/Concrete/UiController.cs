@@ -9,25 +9,25 @@ public class UiController : MonoBehaviour, IUiController
 {
     private List<UiPanel> _allPanels;
     
-    private IMainMenuPanel _mainMenuPanel;
-    private IInGamePanel _inGamePanel;
-    private IPausePanel _pausePanel;
-    private IShopPanel _shopPanel;
-    private ILevelSuccessPanel _levelSuccessPanel;
-    private ILevelFailedPanel _levelFailedPanel;
+    public IMainMenuPanel MainMenuPanel { get; private set; }
+    public IInGamePanel InGamePanel { get; private set; }
+    public IPausePanel PausePanel { get; private set; }
+    public IShopPanel ShopPanel { get; private set; }
+    public ILevelSuccessPanel LevelSuccessPanel { get; private set; }
+    public ILevelFailedPanel LevelFailedPanel { get; private set; }
     
     private void Awake()
     {
-        _mainMenuPanel = FindObjectOfType<MainMenuPanel>(true);
-        _inGamePanel = FindObjectOfType<InGamePanel>(true);
-        _pausePanel = FindObjectOfType<PausePanel>(true);
-        _shopPanel = FindObjectOfType<ShopPanel>(true);
-        _levelSuccessPanel = FindObjectOfType<LevelSuccessPanel>(true);
-        _levelFailedPanel = FindObjectOfType<LevelFailedPanel>(true);
+        MainMenuPanel = FindObjectOfType<MainMenuPanel>(true);
+        InGamePanel = FindObjectOfType<InGamePanel>(true);
+        PausePanel = FindObjectOfType<PausePanel>(true);
+        ShopPanel = FindObjectOfType<ShopPanel>(true);
+        LevelSuccessPanel = FindObjectOfType<LevelSuccessPanel>(true);
+        LevelFailedPanel = FindObjectOfType<LevelFailedPanel>(true);
         
         GetAllPanels();
         CloseAllPanels();
-        OpenSpecificPanel(_mainMenuPanel);
+        OpenSpecificPanel(MainMenuPanel);
     }
 
     public Result GetAllPanels()
