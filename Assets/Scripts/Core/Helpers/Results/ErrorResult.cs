@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using UnityEngine;
 
 namespace Core.Utilities.Results
 {
@@ -10,6 +11,7 @@ namespace Core.Utilities.Results
     {
         public ErrorResult(string message) : base(false, message)
         {
+            Debug.Log(message);
         }
 
         public ErrorResult() : base(false)

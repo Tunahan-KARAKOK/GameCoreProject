@@ -16,12 +16,18 @@ public class GameManager : Singleton<GameManager>
 
     private void OnEnable()
     {
-        EventManager.Instance.EventController.GetEvent<GameStateEvent>().Data.AddListener(ChangeGameState);
+        if (EventManager.Instance)
+        {
+            //EventManager.Instance.EventController.GetEvent<GameStateEvent>().Data.AddListener(ChangeGameState);
+        }
     }
 
     private void OnDisable()
     {
-        EventManager.Instance.EventController.GetEvent<GameStateEvent>().Data.RemoveListener(ChangeGameState);
+        if (EventManager.Instance)
+        {
+            // EventManager.Instance.EventController.GetEvent<GameStateEvent>().Data.RemoveListener(ChangeGameState);
+        }
     }
 
     public void ChangeGameState(GameStates state)
