@@ -8,6 +8,8 @@ public class InputController : MonoBehaviour, IInputController
     public InputType InputType;
     public JoystickType JoystickType;
 
+    public static Joystick Joystick;
+    
     /// <summary>
     /// Current Vector2 of finger/mouse movement 
     /// </summary>
